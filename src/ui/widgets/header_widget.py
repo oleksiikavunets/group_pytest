@@ -3,6 +3,7 @@ from src.ui.widgets.settings.controls_widget import Controls
 
 
 class Header:
+
     def open_controls(self):
         return Controls()
 

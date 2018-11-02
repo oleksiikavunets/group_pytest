@@ -1,3 +1,5 @@
+from selene import browser
+
 from src.ui.elements.base_element import BaseElement
 import selene.support.by
 from selene.support.jquery_style_selectors import s
@@ -5,6 +7,8 @@ from src.ui.elements.button import Button
 
 
 class ContentWidget(BaseElement):
+
+
     """PageWidgets Base class and their helper methods. This class accepts
     driver and web locator from the locators package as inputs
        //*[contains(@class, 'settings-section-2_')] shows all available widgets"""
@@ -23,7 +27,7 @@ class ContentWidget(BaseElement):
 
     """Actually scrolls to element  via JS"""
     def scroll_to_element(self):
-        s().execute_script("arguments[0].scrollIntoView();", self.element)
+        browser.execute_script("arguments[0].scrollIntoView();", self.element)
 
     def get_name(self):
         return self.element.find_element(selene.xpath, "//*[contains(@class,'section-header')]").text
