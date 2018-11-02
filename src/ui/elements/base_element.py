@@ -13,35 +13,41 @@ class BaseElement(object):
 
     def is_displayed(self):
         """Wrapper for Web Element is_displayed Method"""
-        return self._get_by_locator.is_displayed()
+        return len(self._find_all_by_locator()) > 0
 
     def is_selected(self):
         """"""
-        return self._get_by_locator.is_selected()
+        return self._find_by_locator().is_selected()
 
     def get_element_locator(self):
         """Element position on page"""
-        return self._get_by_locator.locator
+        return self._find_by_locator().locator
 
     def get_parent(self):
         """Wrapper for Web Element parent property"""
-        return self._get_by_locator.parent
+        return self._find_by_locator().parent
 
     def get_element(self, by, criteria):
         # Need reuse criteria
         """IF we are searching by Any strategy ==> By.CSS_SELECTOR, value """
-        return self._get_by_locator.find_element(by, criteria)
+        return self._find_by_locator().find_element(by, criteria)
 
     def get_elements(self, by, criteria):
         # Need reuse criteria
         """IF we are searching by Any strategy ==> By.CSS_SELECTOR, value """
-        return self._get_by_locator.find_elements(by, criteria)
+        return self._find_by_locator().find_elements(by, criteria)
 
     def get_attribute(self, item):
-        return self._get_by_locator.get_attribute(item)
+        return self._find_by_locator().get_attribute(item)
 
-    def _get_by_locator(self, locator):
+    def _find_by_locator(self):
         try:
-            return self.driver.find_element(By.CSS_SELECTOR,  locator)
+            return self.driver.find_element(By.CSS_SELECTOR, self.locator)
         except Exception:
-            return self.driver.find_element(By.XPATH,  locator)
+            return self.driver.find_element(By.XPATH, self.locator)
+
+    def _find_all_by_locator(self):
+        try:
+            return self.driver.find_elements(By.CSS_SELECTOR, self.locator)
+        except Exception:
+            return self.driver.find_elements(By.XPATH, self.locator)

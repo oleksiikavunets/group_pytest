@@ -7,7 +7,7 @@ class Button(BaseElement):
         super().__init__(driver, locator)
 
     def click(self):
-        self.element.click()
+        self._find_by_locator().click()
 
     def get_name(self):
-        self.element.text
+        self._find_by_locator().text

@@ -1,3 +1,5 @@
+import time
+
 import allure
 from delayed_assert import expect, assert_expectations
 
@@ -13,10 +15,12 @@ class TestAppDrawer:
         expect(app.header.settings_btn.is_displayed())
         expect(app.header.app_drawer_btn.is_displayed())
 
-        app_drawer = app.header.click_app_drawer()
+        app_drawer = app.header.open_app_drawer()
+        time.sleep(2)
         expect(app_drawer.is_open())
 
-        app.header.click_app_drawer()
+        app.header.close_app_drawer()
+        time.sleep(2)
 
         expect(not app_drawer.is_open())
 
