@@ -1,13 +1,10 @@
-from selene.support.jquery_style_selectors import s
-
 from src.ui.elements.button import Button
-from src.ui.widgets.base_widget import BaseWidget
 from src.ui.widgets.settings.settings_widget import Settings
 
 
-class Controls(BaseWidget):
-
-    _settings_tub_locator = "[id='SettingsDrawerHeader_Settings_Button']"
+class Controls:
+    _controls_tab_locator = "[id='SettingsDrawerHeader_Controls_Button']"
+    _settings_tab_locator = "[id='SettingsDrawerHeader_Settings_Button']"
     _drive_modes_btn_locator = "[id='QuickControls_DriveModes_Button']"
     _driver_assist_btn_locator = "[id='QuickControls_DriverAssist_Button']"
     _valet_mode_btn_locator = "[id='QuickControls_ValetMode_Button']"
@@ -26,8 +23,9 @@ class Controls(BaseWidget):
     _trunk_btn_locator = "[class*='trunk-icon']"
 
     def __init__(self):
-        super().__init__(self._root_locator)
-        self.settings_tub = Button(self._settings_tub_locator)
+        # super().__init__(self._root_locator)
+        self.controls_tab = Button(self._controls_tab_locator)
+        self.settings_tab = Button(self._settings_tab_locator)
         self.drive_modes_btn = Button(self._drive_modes_btn_locator)
         self.doors_lock_btn = Button(self._doors_lock_btn_locator)
         self.driver_assist_btn = Button(self._driver_assist_btn_locator)
@@ -40,5 +38,9 @@ class Controls(BaseWidget):
         self.drive_mode_pedal_btn = Button(self._drive_mode_pedal_btn_locator)
 
     def click_settings_tub(self):
-        self.settings_tub.click()
+        self.settings_tab.click()
         return Settings()
+
+    def click_controls_tub(self):
+        self.controls_tab.click()
+        return Controls()

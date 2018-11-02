@@ -3,8 +3,8 @@ from src.ui.widgets.app_darwer_widget import AppDrawer
 from src.ui.widgets.settings.controls_widget import Controls
 from src.ui.widgets.temperature_widget import TemperatureControlls
 
-class Header:
 
+class Header:
     _settings_btn_locator = "[id='SettingsDrawer_Trigger_Button']"
     _app_drawer_btn_locator = "[id='AppDrawer_Trigger_Button']"
 
@@ -20,5 +20,5 @@ class Header:
         self._app_drawer_btn.click()
         return AppDrawer()
 
-    def open_temperature_controlls(self):
+    def open_temperature_controls(self):
         return TemperatureControlls()
