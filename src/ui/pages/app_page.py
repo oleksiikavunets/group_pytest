@@ -1,4 +1,3 @@
-import selene
 from selene import browser
 
 from src.ui.widgets.climate_widget import Climate
@@ -10,7 +9,6 @@ class AppPage:
         self.header = Header()
         self.climate = Climate()
 
-    def open(self):
+    def open_page(self):
         browser.open_url('/')
         return self
-

@@ -3,7 +3,7 @@ from delayed_assert import expect, assert_expectations
 
 
 def test():
-    app = AppPage().open()
+    app = AppPage().open_page()
     controls = app.header.open_controls()
     controls.drive_modes_btn.click()
     settings = controls.click_settings_tub()
