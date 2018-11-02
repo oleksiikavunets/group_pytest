@@ -6,9 +6,8 @@ from src.ui.widgets.app_drawer.app_drawer_widget import AppDrawer
 from src.ui.widgets.settings.controls_widget import Controls
 
 
-
 class Header:
-    _settings_btn_locator = '//*[@id="SettingsDrawer_Trigger_Button"]'
+    _settings_btn_locator = "//*[@id='SettingsDrawer_Trigger_Button']"
     _app_drawer_btn_locator = "[id='AppDrawer_Trigger_Button']"
 
     def __init__(self, driver):
