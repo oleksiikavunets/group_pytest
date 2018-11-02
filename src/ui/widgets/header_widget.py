@@ -1,5 +1,5 @@
 from src.ui.elements.button import Button
-from src.ui.widgets.app_darwer_widget import AppDrawer
+from src.ui.widgets.app_drawer.app_darwer_widget import AppDrawer
 from src.ui.widgets.settings.controls_widget import Controls
 from src.ui.widgets.temperature_widget import TemperatureControlls
 

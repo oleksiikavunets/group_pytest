@@ -1,4 +1,5 @@
 from src.ui.widgets.app_drawer.app_selector_widget import AppSelector
+from src.ui.widgets.app_drawer.profile_widget import Profile
 
 
 class AppDrawer:
