@@ -1,0 +1,2 @@
+class TemperatureControlls:
+    pass
