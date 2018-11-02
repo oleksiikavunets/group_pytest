@@ -1,4 +1,4 @@
-from src.ui.widgets.app_drawer.app_selector_widget import AppsSelector
+from src.ui.widgets.app_drawer.app_selector_widget import AppSelector
 
 
 class AppDrawer:
@@ -7,4 +7,4 @@ class AppDrawer:
         return Profile()
 
     def open_app_selector(self):
-        return AppsSelector()
+        return AppSelector()
