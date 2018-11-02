@@ -4,8 +4,10 @@ from src.ui.elements.base_element import BaseElement
 class Button(BaseElement):
 
     def __init__(self, locator):
-        pass
+        super().__init__(locator)
 
     def click(self):
-        pass
+        self.element.click()
 
+    def get_name(self):
+        self.element.text
