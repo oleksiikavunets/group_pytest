@@ -1,5 +1,3 @@
-from selene.support.jquery_style_selectors import s
-
 from src.ui.elements.button import Button
 from src.ui.widgets.settings.settings_widget import Settings
 

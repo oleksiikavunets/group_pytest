@@ -1,4 +1,3 @@
-from selene.support.jquery_style_selectors import s
 from selenium.webdriver.common.by import By
 
 from src.ui.elements.button import Button

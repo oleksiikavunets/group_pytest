@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 def setup_session(request):
     web_driver = webdriver.Chrome(ChromeDriverManager().install())
 
-    web_driver.maximize_window()
+    # web_driver.maximize_window()
     session = request.node
     for item in session.items:
         cls = item.getparent(pytest.Class)
