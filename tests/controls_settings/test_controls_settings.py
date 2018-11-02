@@ -24,9 +24,10 @@ class TestControlsSettings(ControlsSettingsBaseTest):
     @allure.testcase("https://testrail.ford.com/index.php?/cases/view/test_case_id")
     @allure.severity(allure.severity_level.CRITICAL)
     def test_control_drawer_1(self):
-        # pass
-        AppPage().open_page().header.open_controls().click_settings_tub()
-        # time.sleep(5)
+
+        app = AppPage().open_page()
+        controls = app.header.open_controls()
+        controls.click_settings_tub()
 
     def test_control_drawer_2(self):
         pass

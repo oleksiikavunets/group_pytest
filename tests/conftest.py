@@ -3,14 +3,18 @@ import pytest
 from allure_commons.types import AttachmentType
 from selene import config, browser
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture(scope="session")
 def setup_session():
-    config.base_url = "http://127.0.0.1:8000/menlo-center-stack"
+    config.base_url = "http://172.31.239.134:8000/menlo-center-stack/"
     config.reports_folder = 'reports'
-    browser.set_driver(webdriver.Chrome())
-    yield browser
+    config.start_maximized = 'True'
+    # config.browser_name = 'chrome'
+
+    browser.set_driver(webdriver.Chrome(ChromeDriverManager().install()))
+    yield
     browser.driver().quit()
 
 
