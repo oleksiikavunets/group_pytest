@@ -1,10 +1,11 @@
+from selene.support import by
 from selene.support.jquery_style_selectors import s
 
 
 class BaseElement(object):
 
     def __init__(self, locator):
-        self.element = s(locator)
+        self.element = self._get_by_locator(locator)
 
     def is_enabled(self):
         """"""
@@ -38,3 +39,9 @@ class BaseElement(object):
 
     def get_attribute(self, item):
         return self.element.get_attribute(item)
+
+    def _get_by_locator(self, locator):
+        try:
+            return s(locator)
+        except Exception:
+            return s(by.xpath(locator))

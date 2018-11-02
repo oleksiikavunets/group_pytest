@@ -2,7 +2,6 @@ from src.ui.elements.button import Button
 from src.ui.widgets.settings.settings_widget import Settings
 
 
-class Controls:
     _controls_tab_locator = "[id='SettingsDrawerHeader_Controls_Button']"
     _settings_tab_locator = "[id='SettingsDrawerHeader_Settings_Button']"
     _drive_modes_btn_locator = "[id='QuickControls_DriveModes_Button']"
@@ -23,7 +22,6 @@ class Controls:
     _trunk_btn_locator = "[class*='trunk-icon']"
 
     def __init__(self):
-        # super().__init__(self._root_locator)
         self.controls_tab = Button(self._controls_tab_locator)
         self.settings_tab = Button(self._settings_tab_locator)
         self.drive_modes_btn = Button(self._drive_modes_btn_locator)
