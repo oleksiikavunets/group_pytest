@@ -39,6 +39,10 @@ class Controls:
         self.drive_mode_slippery_btn = Button(self._drive_mode_slippery_btn_locator)
         self.drive_mode_pedal_btn = Button(self._drive_mode_pedal_btn_locator)
 
-    def click_settings_tub(self):
-        self.settings_tub.click()
+    def click_settings_tab(self):
+        self.settings_tab.click()
         return Settings()
+
+    def click_controls_tab(self):
+        self.controls_tab.click()
+        return Controls()

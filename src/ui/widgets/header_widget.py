@@ -6,9 +6,8 @@ from src.ui.widgets.app_drawer.app_darwer_widget import AppDrawer
 from src.ui.widgets.settings.controls_widget import Controls
 
 
-
 class Header:
-    _settings_btn_locator = '//*[@id="SettingsDrawer_Trigger_Button"]'
+    _settings_btn_locator = "//*[@id='SettingsDrawer_Trigger_Button']"
     _app_drawer_btn_locator = "[id='AppDrawer_Trigger_Button']"
 
     def __init__(self):
@@ -16,7 +15,7 @@ class Header:
         self._app_drawer_btn = Button(self._app_drawer_btn_locator)
 
     def open_controls(self):
-        browser.driver().find_element(By.XPATH,  self._settings_btn_locator).click()
+        browser.driver().find_element(By.XPATH, self._settings_btn_locator).click()
         # self.settings_btn.click()
         return Controls()
 
