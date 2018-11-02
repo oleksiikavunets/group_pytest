@@ -37,4 +37,4 @@ class BaseElement(object):
         return self.element.find_elements(by, criteria)
 
     def get_attribute(self, item):
-        return self.web_element.get_attribute(item)
+        return self.element.get_attribute(item)

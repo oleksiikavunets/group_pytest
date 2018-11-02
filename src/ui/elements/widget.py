@@ -5,7 +5,7 @@ class Widget(BaseElement):
     """PageWidgets Base class and their helper methods. This class accepts
     driver and web locator from the locators package as inputs
        //*[contains(@class, 'settings-section-2_')] shows all available widgets"""
-    def __init__(self, page, widget_locator):
+    def __init__(self, locator):
         # self._page = page
         # self.driver = page.driver
         # self.widget_locator = widget_locator
