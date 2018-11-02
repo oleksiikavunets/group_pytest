@@ -1,8 +1,6 @@
-from src.ui.elements.button import Button
+from src.ui.widgets.app_drawer.temperature_controls import TemperatureControlls
 
 
-class TemperatureControlls:
-    _temperature_btn_locator = "[class='temperature-2DEjG']"
-
-    def __init__(self):
-        self.appDrawer_ = Button(self._settings_tub_locator)
+class Temperature:
+    def open_controls(self):
+        return TemperatureControlls()
