@@ -1,4 +1,5 @@
 import allure
+from selene import browser, config
 
 from tests.controls_settings.contols_settings_base_test import ControlsSettingsBaseTest
 
@@ -14,7 +15,7 @@ class TestControlsSettings(ControlsSettingsBaseTest):
 
     @allure.testcase("", 'Test case title')
     def test_control_drawer_1(self):
-        print('a')
+        browser.open_url(config.base_url)
 
     def test_control_drawer_2(self):
         pass
