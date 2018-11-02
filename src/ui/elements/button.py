@@ -3,8 +3,8 @@ from src.ui.elements.base_element import BaseElement
 
 class Button(BaseElement):
 
-    def __init__(self, locator):
-        super().__init__(locator)
+    def __init__(self, driver,  locator):
+        super().__init__(driver, locator)
 
     def click(self):
         self.element.click()

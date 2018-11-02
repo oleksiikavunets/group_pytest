@@ -1,21 +1,19 @@
-import allure
 import pytest
-from allure_commons.types import AttachmentType
-from selene import config, browser
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture(scope="session")
-def setup_session():
-    config.base_url = "http://172.31.239.134:8000/menlo-center-stack/"
-    config.reports_folder = 'reports'
-    config.start_maximized = 'True'
-    # config.browser_name = 'chrome'
+def setup_session(request):
+    web_driver = webdriver.Chrome(ChromeDriverManager().install())
 
-    browser.set_driver(webdriver.Chrome(ChromeDriverManager().install()))
-    yield
-    browser.driver().quit()
+    web_driver.maximize_window()
+    session = request.node
+    for item in session.items:
+        cls = item.getparent(pytest.Class)
+        setattr(cls.obj, "driver", web_driver)
+    yield web_driver
+    web_driver.quit()
 
 
 # def pytest_exception_interact(node, call, report):
