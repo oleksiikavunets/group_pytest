@@ -13,7 +13,7 @@ future==0.17.1
 idna==2.7
 more-itertools==4.3.0
 pluggy==0.8.0
-py==1.7.0
+py==1.10.0
 pytest==3.9.3
 requests==2.20.0
 selenium==2.53.1
